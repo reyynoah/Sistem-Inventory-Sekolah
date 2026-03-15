@@ -1,0 +1,343 @@
+{
+  "info": {
+    "_postman_id": "083fe9b3-049a-4d48-84a5-dc3f11774372",
+    "name": "inventory-sekolah",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52355867",
+    "_collection_link": "https://go.postman.co/collection/52355867-083fe9b3-049a-4d48-84a5-dc3f11774372?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Admin guanteng",
+              "type": "text",
+              "uuid": "990b56f2-8176-4c0d-bd48-489ab8fd8494"
+            },
+            {
+              "key": "email",
+              "value": "admin1@sekolah.com",
+              "type": "text",
+              "uuid": "da57d0c0-1843-4d98-81fa-304ca943837d"
+            },
+            {
+              "key": "password",
+              "value": "admin12345",
+              "type": "text",
+              "uuid": "8ca368b7-3d89-4faa-886c-bde0375b4a51"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Tambah Kategori",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|eqf4nWoCArHcc8PSoNKxZDtj4MjsQyq2GTwNZJuA754cc6b9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Elektronik",
+              "type": "text",
+              "uuid": "896b0aff-a9ae-4774-a1ed-d8bde9449cf0"
+            },
+            {
+              "key": "name",
+              "value": "Alat Olahraga",
+              "type": "text",
+              "uuid": "24a4d354-e9de-46f7-b776-641663fdcbe4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/categories",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Tambah Barang",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|eqf4nWoCArHcc8PSoNKxZDtj4MjsQyq2GTwNZJuA754cc6b9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "category_id",
+              "value": "1",
+              "type": "text",
+              "uuid": "00bfa082-44f2-45c6-9519-8a2dc3642771"
+            },
+            {
+              "key": "name",
+              "value": "Proyektor Epson",
+              "type": "text",
+              "uuid": "3981d7fd-526c-4363-9baf-14be4fd6a672"
+            },
+            {
+              "key": "stock",
+              "value": "5",
+              "type": "text",
+              "uuid": "6b6e827e-92d7-46e6-82f1-1d896e0a5959"
+            },
+            {
+              "key": "description",
+              "value": "Kondisi mulus",
+              "type": "text",
+              "uuid": "41a9130a-ec98-4b04-9d04-915d0bb7aab5"
+            },
+            {
+              "key": "image",
+              "type": "file",
+              "uuid": "cd548623-0cd7-478b-a547-d6df0c5d20be",
+              "src": "/D:/downloads/epson.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/items",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Pinjam Barang",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|eqf4nWoCArHcc8PSoNKxZDtj4MjsQyq2GTwNZJuA754cc6b9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "item_id",
+              "value": "1",
+              "type": "text",
+              "uuid": "b9bdb7c7-a4bf-4149-ae16-da8ca86c62a1"
+            },
+            {
+              "key": "borrow_date",
+              "value": "2026-03-15",
+              "type": "text",
+              "uuid": "4d38be94-e1f9-4975-89b6-5e7be122172a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/borrow",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "borrow"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Kembalikan Barang",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|eqf4nWoCArHcc8PSoNKxZDtj4MjsQyq2GTwNZJuA754cc6b9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "return_date",
+              "value": "2026-03-16",
+              "type": "text",
+              "uuid": "cd1e034d-7285-4aad-8474-7d99ab1d9d74"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/return/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "return",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Lihat & Search Barang",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|eqf4nWoCArHcc8PSoNKxZDtj4MjsQyq2GTwNZJuA754cc6b9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/items?search=Proyektor",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "items"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "Proyektor"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Riwayat Transaksi",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|eqf4nWoCArHcc8PSoNKxZDtj4MjsQyq2GTwNZJuA754cc6b9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/transactions/history",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "transactions",
+            "history"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
