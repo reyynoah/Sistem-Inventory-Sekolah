@@ -10,10 +10,19 @@ use Illuminate\Support\Facades\Validator;
 class ItemController extends Controller
 {
     // Lihat semua barang (lengkap sama nama kategorinya)
-    public function index()
+    // Lihat semua barang (dan fitur Search)
+    public function index(Request $request)
     {
-        // Pakai with('category') biar keliatan ini barang dari kategori apa
-        $items = Item::with('category')->get(); 
+        // Panggil barang beserta nama kategorinya
+        $query = Item::with('category');
+
+        // Cek kalau user masukin kata kunci pencarian
+        if ($request->has('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        $items = $query->get();
+
         return response()->json([
             'message' => 'Data Barang Gudang',
             'data' => $items
